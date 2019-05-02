@@ -1,0 +1,451 @@
+{
+  "nodes" : [ {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,188,173)",
+        "siteText" : "p",
+        "siteInfo" : "SHC1-Y315-K.n{305.21}QY{243.03}LRNPPK{432.30}.L",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,193,179)",
+        "siteText" : "p",
+        "siteInfo" : "SHC1-Y427-K.n{305.21}QMPPPPPC{160.03}PGRELFDDPSY{243.03}VNVQNLDK{432.30}.A",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,199,186)",
+        "siteText" : "p",
+        "siteInfo" : "SHC1-Y427-R.n{305.21}ELFDDPSY{243.03}VNVQNLDK{432.30}.A",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "SHC1",
+      "text" : "SHC1"
+    }
+  }, {
+    "css" : {
+      "borderColor" : "rgb(0,180,20)"
+    },
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,195,182)",
+        "siteText" : "p",
+        "siteInfo" : "EGFR-Y1172-K.n{305.21}GSHQISLDNPDY{243.03}QQDFFPK{432.30}.E",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,234,230)",
+        "siteText" : "p",
+        "siteInfo" : "EGFR-Y998-R.n{305.21}MHLPSPTDSNFY{243.03}R.A",
+        "siteBorderColor" : "rgb(50,50,50)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,125,95)",
+        "siteText" : "p",
+        "siteInfo" : "EGFR-Y1069-R.n{305.21}Y{243.03}SSDPTGALTEDSIDDTFLPVPEYINQSVPK{432.30}.R",
+        "siteBorderColor" : "rgb(180,0,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,117,86)",
+        "siteText" : "p",
+        "siteInfo" : "EGFR-Y1197-K.n{305.21}GSTAENAEY{243.03}LR.V",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EGFR",
+      "text" : "EGFR"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,160,139)",
+        "siteText" : "p",
+        "siteInfo" : "MAPK3-Y204-R.n{305.21}IADPEHDHTGFLTEY{243.03}VATR.W",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,187,171)",
+        "siteText" : "p",
+        "siteInfo" : "MAPK3-T202-R.n{305.21}IADPEHDHTGFLT{181.01}EYVATR.W",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "MAPK3",
+      "text" : "MAPK3"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,162,141)",
+        "siteText" : "p",
+        "siteInfo" : "PLCG1-Y1253-R.n{305.21}Y{243.03}QQPFEDFR.L",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,208,197)",
+        "siteText" : "p",
+        "siteInfo" : "PLCG1-Y783-R.n{305.21}NPGFY{243.03}VEANPMPTFK{432.30}.C",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,239,235)",
+        "siteText" : "p",
+        "siteInfo" : "PLCG1-Y771-K.n{305.21}IGTAEPDY{243.03}GALYEGR.N",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "PLCG1",
+      "text" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,174,155)",
+        "siteText" : "p",
+        "siteInfo" : "CBL-S558-R.n{305.21}DLPPPPPPDRPYSVGAES{167.00}RPQR.R",
+        "siteBorderColor" : "rgb(50,50,50)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,132,104)",
+        "siteText" : "p",
+        "siteInfo" : "CBL-Y674-K.n{305.21}IK{432.30}PSSSANAIY{243.03}SLAARPLPVPK{432.30}.L",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,155,132)",
+        "siteText" : "p",
+        "siteInfo" : "CBL-S553-R.n{305.21}DLPPPPPPDRPYS{167.00}VGAESRPQR.R",
+        "siteBorderColor" : "rgb(50,50,50)"
+      } ],
+      "id" : "CBL",
+      "text" : "CBL"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(216,223,255)",
+        "siteText" : "p",
+        "siteInfo" : "CDK5-Y15-K.n{305.21}IGEGTY{243.03}GTVFK{432.30}.A",
+        "siteBorderColor" : "rgb(50,50,50)"
+      } ],
+      "id" : "CDK5",
+      "text" : "CDK5"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,97,61)",
+        "siteText" : "p",
+        "siteInfo" : "EPS15-Y849-K.n{305.21}EADPSNFANFSAY{243.03}PSEEDMIEWAK{432.30}.R",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EPS15",
+      "text" : "EPS15"
+    }
+  }, {
+    "css" : {
+      "borderColor" : "rgb(0,180,20)"
+    },
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,220,212)",
+        "siteText" : "a",
+        "siteInfo" : "EGF-active",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EGF",
+      "text" : "EGF"
+    }
+  }, {
+    "css" : {
+      "borderColor" : "rgb(0,180,20)"
+    },
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(235,239,255)",
+        "siteText" : "p",
+        "siteInfo" : "FYN-Y213-R.n{305.21}K{432.30}LDNGGY{243.03}YITTR.A",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "FYN",
+      "text" : "FYN"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,242,239)",
+        "siteText" : "p",
+        "siteInfo" : "EPB41-Y660-R.n{305.21}ERLDGENIY{243.03}IR.H",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "EPB41",
+      "text" : "EPB41"
+    }
+  }, {
+    "css" : {
+      "borderColor" : "rgb(180,0,20)"
+    },
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(208,217,255)",
+        "siteText" : "p",
+        "siteInfo" : "EPHA7-Y608-K.n{305.21}TY{243.03}IDPETYEDPNR.A",
+        "siteBorderColor" : "rgb(50,50,50)"
+      }, {
+        "siteBackgroundColor" : "rgb(221,227,255)",
+        "siteText" : "p",
+        "siteInfo" : "EPHA7-Y791-R.n{305.21}VIEDDPEAVY{243.03}TTTGGK{432.30}.L",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EPHA7",
+      "text" : "EPHA7"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,221,214)",
+        "siteText" : "p",
+        "siteInfo" : "STAT3-Y705-K.n{305.21}YC{160.03}RPESQEHPEADPGSAAPY{243.03}LK{432.30}.T",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "STAT3",
+      "text" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,179,162)",
+        "siteText" : "p",
+        "siteInfo" : "GAB1-Y659-K.n{305.21}SSGSGSSVADERVDY{243.03}VVVDQQK{432.30}.T",
+        "siteBorderColor" : "rgb(50,50,50)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,227,220)",
+        "siteText" : "p",
+        "siteInfo" : "GAB1-Y659-R.n{305.21}VDY{243.03}VVVDQQK{432.30}.T",
+        "siteBorderColor" : "rgb(50,50,50)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,181,164)",
+        "siteText" : "p",
+        "siteInfo" : "GAB1-Y406-K.n{305.21}DASSQDC{160.03}Y{243.03}DIPR.A",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "GAB1",
+      "text" : "GAB1"
+    }
+  }, {
+    "css" : {
+      "borderWidth" : "2px"
+    },
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(214,222,255)",
+        "siteText" : "p",
+        "siteInfo" : "EPHA3-Y779-R.n{305.21}VLEDDPEAAY{243.03}TTR.G",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EPHA3",
+      "text" : "EPHA3"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,180,163)",
+        "siteText" : "p",
+        "siteInfo" : "PTPN11-Y546-K.n{305.21}GHEY{243.03}TNIK{432.30}.Y",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,196,183)",
+        "siteText" : "p",
+        "siteInfo" : "PTPN11-Y584-R.n{305.21}VY{243.03}ENVGLMQQQK{432.30}.S",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "PTPN11",
+      "text" : "PTPN11"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,213,203)",
+        "siteText" : "p",
+        "siteInfo" : "SPRY1-Y53-R.n{305.21}GSNEY{243.03}TEGPSVVK{432.30}.R",
+        "siteBorderColor" : "rgb(50,50,50)"
+      } ],
+      "id" : "SPRY1",
+      "text" : "SPRY1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,204,193)",
+        "siteText" : "p",
+        "siteInfo" : "STAT5A-Y694-K.n{305.21}AVDGY{243.03}VK{432.30}PQIK{432.30}.Q",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "STAT5A",
+      "text" : "STAT5A"
+    }
+  }, {
+    "css" : {
+      "borderWidth" : "2px"
+    },
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,181,164)",
+        "siteText" : "p",
+        "siteInfo" : "GRB2-Y209-R.n{305.21}NY{243.03}VTPVNR.N",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "GRB2",
+      "text" : "GRB2"
+    }
+  } ],
+  "edges" : [ {
+    "data" : {
+      "tooltipText" : "STAT5A_694",
+      "edgeType" : "phosphorylates",
+      "source" : "PLCG1",
+      "target" : "STAT5A"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "GRB2_168, GRB2_209",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "GRB2"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PLCG1_783, PLCG1_1253, PLCG1_472, PLCG1_771",
+      "edgeType" : "phosphorylates",
+      "source" : "EGF",
+      "target" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "SPRY1_53",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "SPRY1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_727, STAT3_705",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "CDK5_15",
+      "edgeType" : "phosphorylates",
+      "source" : "EPHA7",
+      "target" : "CDK5"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PLCG1_783, PLCG1_771",
+      "edgeType" : "phosphorylates",
+      "source" : "CBL",
+      "target" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "CDK5_15",
+      "edgeType" : "phosphorylates",
+      "source" : "EPHA3",
+      "target" : "CDK5"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "GAB1_659, GAB1_627, GAB1_589, GAB1_447, GAB1_472",
+      "edgeType" : "phosphorylates",
+      "source" : "EGF",
+      "target" : "GAB1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "EPS15_849, EPS15_850",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "EPS15"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_705",
+      "edgeType" : "dephosphorylates",
+      "source" : "GRB2",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "SHC1_350, SHC1_427, SHC1_349, SHC1_318",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "SHC1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PLCG1_783, PLCG1_1253, PLCG1_472, PLCG1_771",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "GAB1_659, GAB1_406, GAB1_307, GAB1_627, GAB1_657, GAB1_589, GAB1_447, GAB1_689, GAB1_619, GAB1_285, GAB1_373, GAB1_472",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "GAB1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "SPRY1_53",
+      "edgeType" : "phosphorylates",
+      "source" : "EGF",
+      "target" : "SPRY1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PTPN11_584, PTPN11_546",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "PTPN11"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "EPB41_660, EPB41_418, EPB41_437",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "EPB41"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_705",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "EPS15_849, EPS15_850",
+      "edgeType" : "phosphorylates",
+      "source" : "EGF",
+      "target" : "EPS15"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_726, STAT3_705, STAT3_727",
+      "edgeType" : "phosphorylates",
+      "source" : "MAPK3",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PLCG1_783, PLCG1_1253, PLCG1_472, PLCG1_771",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_705",
+      "edgeType" : "phosphorylates",
+      "source" : "EGF",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT5A_694",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "STAT5A"
+    }
+  } ]
+}

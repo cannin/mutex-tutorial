@@ -1,0 +1,56 @@
+---
+title: "Mutex"
+output:
+  html_notebook: default
+---
+  
+```{r knitrSetup, include=FALSE}
+library(knitr)
+opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="center", tidy=FALSE)
+verbose <- FALSE
+```
+
+# Purpose
+
+Example usage of the mutual exclusivity analysis described here:  
+
+## Publication 
+
+Systematic identification of cancer driving signaling pathways based on mutual exclusivity of genomic alterations
+https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0612-6
+
+## Code and Parameter Description 
+
+https://github.com/PathwayAndDataAnalysis/mutex
+
+# Background:
+## Background: Method
+Often several alternative driver alterations in different genes can lead to similar downstream events causing cancer proliferation. Mutex searches for these sets of genes using pathway interactions between genes. 
+
+# Run Mutex
+
+NOTE: This may take several minutes. There is currently no R interface to mutex.
+
+## Parameters 
+
+```{r, engine='bash'}
+cat dataset/parameters.txt
+```
+
+## Query Genes
+
+```{r, engine='bash'}
+head dataset/RankedGenes.txt
+```
+
+## Run Mutex 
+
+```{r, engine='bash'}
+java -jar mutex.jar dataset
+```
+
+# Session Info
+```{r}
+sessionInfo()
+```
+

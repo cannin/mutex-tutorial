@@ -1,0 +1,9 @@
+search-on-signaling-network = true
+network-file = PC2v7.sif
+first-level-random-iteration = 10000
+second-level-random-iteration = 0
+max-group-size = 5
+fdr-cutoff = 0.1
+data-file = DataMatrix.txt
+gene-limit = 200
+gene-ranking-file = RankedGenes.txt

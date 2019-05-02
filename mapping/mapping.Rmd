@@ -1,0 +1,194 @@
+---
+title: "Mapping Pathway Data"
+output:
+  html_notebook: default
+---
+
+```{r knitrSetup, include=FALSE}
+library(knitr)
+opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="center", tidy=FALSE)
+verbose <- FALSE
+```
+
+# Purpose
+
+Provide examples on extracting interactions for entities (e.g. genes, drugs, metabolites) from the Pathway Commons network. 
+
+* Pathway Commons (http://www.pathwaycommons.org/) aggregates a collection of interaction databases
+* Pathway Commons provides a Simple Interaction Format (SIF) network that sufficies for many applications 
+
+# Load Libraries
+
+```{r loadLibraries, message=FALSE}
+library(paxtoolsr)
+library(igraph)
+library(plyr)
+```
+
+# Load Data
+```{r loadData}
+pcFile <- "../pc8.rds"
+
+if(file.exists(pcFile)) {
+  sif <- readRDS(pcFile)
+} else {
+  sif <- downloadPc2("PathwayCommons.8.All.EXTENDED_BINARY_SIF.hgnc.txt.gz", version="8")
+  saveRDS(sif, pcFile)
+}
+```
+
+# SIF Data Description 
+
+The `sif` variable is a list with two elements: nodes and edges. 
+
+```{r}
+head(sif$nodes)
+head(sif$edges)
+```
+
+# Load Chemical ID Conversion
+
+Pathway Commons uses CHEBI (http://www.ebi.ac.uk/chebi/) IDs to identify small molecules; drugs and small molecules need to be converted. 
+
+## Search Pathway Commons by Name
+
+grep() can be used to extract IDs from the SIF network 
+
+```{r}
+idx <- grep("pyruvate$", sif$nodes$PARTICIPANT_NAME, ignore.case = TRUE)
+dat <- sif$nodes[idx, c("PARTICIPANT", "PARTICIPANT_NAME")]
+dat
+```
+
+## Convert using the Chemical Translation Service
+
+Load convertChemIds(). This function uses Chemical Translation Service (CTS, http://cts.fiehnlab.ucdavis.edu/) to convert chemical IDs (drugs and metabolites). NOTE: Some times manual searches may still be necessary. 
+
+```{r convertChemIds}
+source("https://gist.githubusercontent.com/cannin/cfcc5004bfc87d929b0d9cc42a461339/raw/convertChemIds.R")
+
+convertChemIds("6305", "PubChem CID", "ChEBI")
+convertChemIds("ATP", "Chemical Name", "ChEBI")
+```
+
+# Extract Sub-Networks 
+
+Load a set of query cancer genes: 
+
+```{r}
+cancerGenes <- readLines("cancerGenes.txt")
+```
+
+## Gene-gene interactions 
+
+The SIF can be filtered using filterSif() that includes common queries, such as forcing the returned network to have edges where both source and target are in the query gene list. Additional filtering can also be done separately (e.g. edges that have an associated publication).
+
+```{r}
+filteredSif <- filterSif(sif$edges, ids = cancerGenes, idsBothParticipants = TRUE, interactionTypes = "controls-phosphorylation-of")
+
+filteredSif <- filteredSif[filteredSif$INTERACTION_PUBMED_ID != "", ]
+
+head(filteredSif)
+```
+
+## Gene-drug interactions
+
+Drug-target interactions can be extracted from the Pathway Commons dataset using CHEBI IDs. This can be paired with related data on different types of drugs or for drugs at different stages; here data is used from the DrugBank database. 
+
+The file "drugbankGroupsCategories.rds" contains an extraction of categories and groups from DrugBank.ca Definitions taken from https://www.drugbank.ca/documentation
+
+* Group: Drugs are categorized by group, which determines their drug development status. 
+* Category: Therapeutic category or general category of drug (anti-convulsant, antibacterial, etc.)
+
+```{r}
+drugbankGroupsCategories <- readRDS("drugbankGroupsCategories.rds")
+
+filteredSif <- filterSif(sif$edges, ids = cancerGenes, interactionTypes = "chemical-affects")
+
+head(filteredSif)
+```
+
+## Gene-metabolite interactions 
+
+Similarly, metabolic intneractions can be extracted. Here we extract interactions that 
+
+```{r}
+# Convert the network to a data.table to allow searching the delimited, multiple values in columns
+invisible(convertToDT(sif))
+
+```
+
+# Search for a specific metabolite of interest
+```{r}
+glycogen <- "CHEBI:28087"
+filterSif(sif=sif$edges, ids=glycogen)
+```
+
+# Extract Genes in Pathway
+## Specific Pathway 
+
+```{r}
+gmt <- downloadPc2("PathwayCommons.8.reactome.GSEA.hgnc.gmt.gz", version="8", removePrefix=TRUE)
+
+minGenes <- 3
+maxGenes <- 100
+
+l <- lapply(gmt, length)
+idx <- which(l >= minGenes & l <= maxGenes)
+gmt <- gmt[idx]
+
+tmp <- grep("metabolism", names(gmt), ignore.case = TRUE, value = TRUE) 
+head(tmp)
+
+idx <- which(names(gmt) == "Surfactant metabolism")
+gmt[idx]
+```
+
+# Extract Neighbor Targets 
+
+Often the gene interest does not have an specific drug. In this case, it may be of interest to search neighboring, interacting genes to identify drugs that target upstream or downstream neighbors of the gene of interest. 
+
+To do this, **paxtoolsr** provides a convenience function loadSifInIgraph() that helps load data into the the igraph R package (http://igraph.org/r/) to allow network analyses. 
+
+```{r}
+# Filter down the interactions we will use to those between proteins (as opposed to small-molecule and protein, for example)
+# Further remove the "in-complex-with" interactions since these tend to enlarge the list of neighboring proteins by a lot
+interactionTypes <- getSifInteractionCategories()[["BetweenProteins"]]
+interactionTypes <- setdiff(interactionTypes, "in-complex-with")
+
+# Filter to Reactome, again to limit the observed network
+s1 <- filterSif(sif$edges, interactionTypes=interactionTypes, dataSources="Reactome")
+
+# Load the network into igraph
+g <- loadSifInIgraph(s1)
+idx <- match("TP53", V(g)$name)
+g1 <- E(g)[from(idx)]
+
+# Extract out the neighbors of BRAF
+q <- "BRAF"
+v1 <- neighbors(g, q, mode="in")
+x <- sort(v1$name)
+x <- c(q, x)
+
+# Return to the original network to look for drug-gene interactions in a larger set of databases
+drugDataSources <- c("Reactome", "KEGG", "SMPDB", "DrugBank")
+
+# Search for the neighbors 
+s2 <- filterSif(sif$edges, ids=x, interactionTypes="chemical-affects", dataSources=drugDataSources)
+sort(unique(s2$PARTICIPANT_B))
+
+# As an example, extract out interactions with AKT1 to look for drugs
+s3 <- filterSif(s2, ids="SRC")
+
+# Map the CHEBI IDs to names 
+smMolNames <- plyr::mapvalues(s3$PARTICIPANT_A, sif$nodes$PARTICIPANT, sif$nodes$PARTICIPANT_NAME, warn_missing=FALSE)
+smMolNames
+```
+
+Many of the resulting entries are metabolites, but dasatinib is a known SRC inhibitor. 
+
+# Session Info 
+
+```{r}
+sessionInfo()
+```

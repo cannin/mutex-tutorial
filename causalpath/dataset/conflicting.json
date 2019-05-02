@@ -1,0 +1,301 @@
+{
+  "nodes" : [ {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,160,139)",
+        "siteText" : "p",
+        "siteInfo" : "MAPK3-Y204-R.n{305.21}IADPEHDHTGFLTEY{243.03}VATR.W",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "MAPK3",
+      "text" : "MAPK3"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,181,164)",
+        "siteText" : "p",
+        "siteInfo" : "GAB1-Y406-K.n{305.21}DASSQDC{160.03}Y{243.03}DIPR.A",
+        "siteBorderColor" : "rgb(0,180,20)"
+      }, {
+        "siteBackgroundColor" : "rgb(255,179,162)",
+        "siteText" : "p",
+        "siteInfo" : "GAB1-Y659-K.n{305.21}SSGSGSSVADERVDY{243.03}VVVDQQK{432.30}.T",
+        "siteBorderColor" : "rgb(50,50,50)"
+      } ],
+      "id" : "GAB1",
+      "text" : "GAB1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,193,179)",
+        "siteText" : "p",
+        "siteInfo" : "SHC1-Y427-K.n{305.21}QMPPPPPC{160.03}PGRELFDDPSY{243.03}VNVQNLDK{432.30}.A",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "SHC1",
+      "text" : "SHC1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,239,235)",
+        "siteText" : "p",
+        "siteInfo" : "PLCG1-Y771-K.n{305.21}IGTAEPDY{243.03}GALYEGR.N",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "PLCG1",
+      "text" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,213,203)",
+        "siteText" : "p",
+        "siteInfo" : "SPRY1-Y53-R.n{305.21}GSNEY{243.03}TEGPSVVK{432.30}.R",
+        "siteBorderColor" : "rgb(50,50,50)"
+      } ],
+      "id" : "SPRY1",
+      "text" : "SPRY1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(216,223,255)",
+        "siteText" : "p",
+        "siteInfo" : "CDK5-Y15-K.n{305.21}IGEGTY{243.03}GTVFK{432.30}.A",
+        "siteBorderColor" : "rgb(50,50,50)"
+      } ],
+      "id" : "CDK5",
+      "text" : "CDK5"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,125,95)",
+        "siteText" : "p",
+        "siteInfo" : "EGFR-Y1069-R.n{305.21}Y{243.03}SSDPTGALTEDSIDDTFLPVPEYINQSVPK{432.30}.R",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "EGFR",
+      "text" : "EGFR"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,97,61)",
+        "siteText" : "p",
+        "siteInfo" : "EPS15-Y849-K.n{305.21}EADPSNFANFSAY{243.03}PSEEDMIEWAK{432.30}.R",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EPS15",
+      "text" : "EPS15"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,169,149)",
+        "siteText" : "p",
+        "siteInfo" : "MAPK1-Y187-R.n{305.21}VADPDHDHTGFLTEY{243.03}VATR.W",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "MAPK1",
+      "text" : "MAPK1"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(238,241,255)",
+        "siteText" : "p",
+        "siteInfo" : "PXN-Y118-R.n{305.21}VGEEEHVY{243.03}SFPNK{432.30}.Q",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "PXN",
+      "text" : "PXN"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(226,232,255)",
+        "siteText" : "p",
+        "siteInfo" : "VCL-Y822-K.n{305.21}SFLDSGY{243.03}R.L",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "VCL",
+      "text" : "VCL"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(235,239,255)",
+        "siteText" : "p",
+        "siteInfo" : "FYN-Y213-R.n{305.21}K{432.30}LDNGGY{243.03}YITTR.A",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "FYN",
+      "text" : "FYN"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,242,239)",
+        "siteText" : "p",
+        "siteInfo" : "EPB41-Y660-R.n{305.21}ERLDGENIY{243.03}IR.H",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "EPB41",
+      "text" : "EPB41"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,221,214)",
+        "siteText" : "p",
+        "siteInfo" : "STAT3-Y705-K.n{305.21}YC{160.03}RPESQEHPEADPGSAAPY{243.03}LK{432.30}.T",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "STAT3",
+      "text" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(255,181,164)",
+        "siteText" : "p",
+        "siteInfo" : "GRB2-Y209-R.n{305.21}NY{243.03}VTPVNR.N",
+        "siteBorderColor" : "rgb(180,0,20)"
+      } ],
+      "id" : "GRB2",
+      "text" : "GRB2"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(209,218,255)",
+        "siteText" : "p",
+        "siteInfo" : "IGF1R-Y1166-R.n{305.21}DIYETDYY{243.03}RK{432.30}.G",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "IGF1R",
+      "text" : "IGF1R"
+    }
+  }, {
+    "data" : {
+      "sites" : [ {
+        "siteBackgroundColor" : "rgb(214,222,255)",
+        "siteText" : "p",
+        "siteInfo" : "EPHA3-Y779-R.n{305.21}VLEDDPEAAY{243.03}TTR.G",
+        "siteBorderColor" : "rgb(0,180,20)"
+      } ],
+      "id" : "EPHA3",
+      "text" : "EPHA3"
+    }
+  } ],
+  "edges" : [ {
+    "data" : {
+      "tooltipText" : "MAPK3_204, MAPK3_202",
+      "edgeType" : "phosphorylates",
+      "source" : "VCL",
+      "target" : "MAPK3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "CDK5_15",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "CDK5"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "GRB2_168, GRB2_209",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "GRB2"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_705",
+      "edgeType" : "phosphorylates",
+      "source" : "EPHA3",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "SPRY1_53",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "SPRY1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "GAB1_659, GAB1_627, GAB1_589, GAB1_447, GAB1_472",
+      "edgeType" : "phosphorylates",
+      "source" : "GRB2",
+      "target" : "GAB1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "EPS15_849, EPS15_850",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "EPS15"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PLCG1_783, PLCG1_1253, PLCG1_472, PLCG1_771",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "GAB1_659, GAB1_406, GAB1_307, GAB1_627, GAB1_657, GAB1_589, GAB1_447, GAB1_689, GAB1_619, GAB1_285, GAB1_373, GAB1_472",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "GAB1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "EPB41_660, EPB41_418, EPB41_437",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "EPB41"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "STAT3_705",
+      "edgeType" : "phosphorylates",
+      "source" : "EGFR",
+      "target" : "STAT3"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PXN_118",
+      "edgeType" : "phosphorylates",
+      "source" : "FYN",
+      "target" : "PXN"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "PLCG1_783, PLCG1_1253, PLCG1_771",
+      "edgeType" : "phosphorylates",
+      "source" : "GRB2",
+      "target" : "PLCG1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "SHC1_195, SHC1_272, SHC1_194, SHC1_240, SHC1_350, SHC1_317, SHC1_427, SHC1_239, SHC1_349",
+      "edgeType" : "phosphorylates",
+      "source" : "IGF1R",
+      "target" : "SHC1"
+    }
+  }, {
+    "data" : {
+      "tooltipText" : "MAPK1_187, MAPK1_185",
+      "edgeType" : "phosphorylates",
+      "source" : "VCL",
+      "target" : "MAPK1"
+    }
+  } ]
+}

@@ -1,0 +1,15 @@
+INTERACTION_TYPE	COLOR
+used-to-produce	#F781BF
+reacts-with	#F781BF
+neighbor-of	#999999
+interacts-with	#999999
+controls-state-change-of	#377EB8
+controls-phosphorylation-of	#377EB8
+controls-production-of	#FF7F00
+consumption-controlled-by	#FF7F00
+controls-transport-of-chemical	#A65628
+controls-transport-of	#A65628
+controls-expression-of	#4DAF4A
+chemical-affects	#984EA3
+in-complex-with	#FFFF33
+catalysis-precedes	#E41A1C

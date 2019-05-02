@@ -1,0 +1,118 @@
+---
+output:
+  html_notebook:
+    toc: true
+  md_document:
+    variant: markdown_github
+title: clusterProfiler Test
+---
+
+# Minimal EnrichmentMap Analysis Using Only R
+Augustin Luna (aluna at jimmy.harvard.edu)
+
+# Purpose
+
+This interactive notebook shows how to perform a minimal EnrichmentMap analysis using only R. It makes use of results  created in the [Pathway Commons Guide Workflow for RNASeq analysis](http://pathwaycommons.github.io/guide/workflows/rna_seq_to_enrichment_map_r_notebook/index.html). 
+
+## Notes 
+* Results may differ from the Guide on the main Pathway Commons page due to differences in software packages used. Differences to between clusterProfiler and GSEA in this post: http://guangchuangyu.github.io/2015/11/comparison-of-clusterprofiler-and-gsea-p/  
+* This minimal setup is provided for users to try out these analysis interactive and online using temporary notebook with their own data without the need to install software locally. 
+
+# Load libraries
+
+Here we load R packages to be used. 
+
+```{r}
+# Conducts enrichement analysis
+library(clusterProfiler) 
+# Network visualization 
+library(igraph)
+```
+
+# Load Gene Sets
+
+Load genesets provided by Bader Lab: http://download.baderlab.org/EM_Genesets/
+
+```{r}
+# Bounds for the number of allowable genes in the gene sets 
+lowerBound <- 3
+upperBound <- 100
+
+# Read the gene sets  
+tmpGmt <- read.gmt("Human_GOBP_AllPathways_no_GO_iea_February_01_2017_symbol.gmt")
+
+# Find the length of each gene set and filter the gene sets to those within the bounds
+geneCounts <- table(tmpGmt[, "ont"])
+tmp <- which(geneCounts > lowerBound & geneCounts < upperBound)
+idx <- tmpGmt[,"ont"] %in% names(tmp)
+t2 <- tmpGmt[idx,]
+gmt <- t2
+
+# See some of the gene sets 
+head(gmt, 3)
+```
+
+# Load Data
+
+Take pre-calculated results from main Guide (see above) workflow, saved in file: "brca_hd_tep.rnk".
+
+```{r}
+# Load differential expression results and convert to geneList format for clusterProfiler
+results <- read.table("brca_hd_tep.rnk", header=TRUE, stringsAsFactors=FALSE)
+head(results)
+
+geneList <- results$rank
+names(geneList) <- results$gene
+```
+
+# Run Enrichment Analysis
+
+Run the enrichment analysis provided by clusterProfiler
+
+```{r}
+gsea <- GSEA(geneList, TERM2GENE=gmt, nPerm=1000, pvalueCutoff=1)
+
+# Conversion to data.frame to view GSEA results
+y <- as.data.frame(gsea)
+head(gsea)
+```
+
+# Visualize GSEA Plot for Single Gene Set
+
+Information on reading GSEA plots can be found here: http://software.broadinstitute.org/gsea/doc/GSEAUserGuideFrame.html
+
+```{r}
+gseaplot(gsea, geneSetID = "LEPTIN%NETPATH%LEPTIN")
+```
+
+# Create EnrichmentMap
+
+NOTE: This is arbritarily limited to 10 nodes 
+
+```{r}
+#dev.off() # Hack hide the default image; we will make a different one with a shorter names 
+g <- enrichMap(gsea, n=10)
+```
+
+## Visualize EnrichmentMap with Shorten Names
+
+```{r}
+# Shorten gene set names by removing the content after first delimiter (e.g. database name like NetPath): "LEPTIN%NETPATH%LEPTIN"
+currentGeneSetNames <- V(g)$name
+shortGeneSetNames <- NULL
+
+for(i in 1:length(currentGeneSetNames)) {
+  tmp <- strsplit(currentGeneSetNames[i], "%")
+  shortGeneSetNames <- c(shortGeneSetNames, tmp[[1]][1])
+}
+
+# Rename nodes with shorten names and plot
+g1 <- set.vertex.attribute(g, "name", value=shortGeneSetNames)
+plot(g1)
+```
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
