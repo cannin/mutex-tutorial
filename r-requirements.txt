@@ -1,3 +1,4 @@
+rmarkdown
 rJava
 bitbucket:mil2041/netboxr
 github:BioPAX/paxtoolsr
