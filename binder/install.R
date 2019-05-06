@@ -14,8 +14,8 @@ BiocInstaller::biocLite(c("clusterProfiler", "GSEABase", "enrichplot"))
 install_bitbucket("mil2041/netboxr")
 install_github("BioPAX/paxtoolsr")
 
-install_cran("parcor")
-install_cran("fdrtool")
+#install_cran("parcor")
+#install_cran("fdrtool")
 install_cran("DT")
 
 #source("https://gist.githubusercontent.com/cannin/6b8c68e7db19c4902459/raw/installPackages.R")
