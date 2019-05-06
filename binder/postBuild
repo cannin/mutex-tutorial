@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#R CMD javareconf -e
+#R -e "install.packages(c('rJava'), repos='http://cran.rstudio.com/')"

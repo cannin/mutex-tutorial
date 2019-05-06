@@ -1,16 +1,16 @@
+system("R CMD javareconf -e")
+
 install.packages("devtools")
 install.packages("stringr")
 
 library(devtools)
 
-#install_github("BioPAX/paxtoolsr")
-#install_bitbucket("mil2041/netboxr")
-
 install_cran("rmarkdown")
 install_cran("rJava")
-install_bioc("clusterProfiler")
-install_bioc("GSEABase")
-install_bioc("enrichplot")
+
+source("https://bioconductor.org/biocLite.R")
+BiocInstaller::biocLite(c("clusterProfiler", "GSEABase", "enrichplot"))
+
 install_bitbucket("mil2041/netboxr")
 install_github("BioPAX/paxtoolsr")
 
