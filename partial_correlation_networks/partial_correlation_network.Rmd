@@ -1,38 +1,49 @@
 ---
 title: "Build de novo network using partial correlation analysis"
 output:
-  html_document:
-    df_print: paged
-  html_notebook: default
   md_document:
     toc: yes
     variant: markdown_github
+  github_document:
+    toc: true
+    toc_depth: 2
+  html_notebook: default
+  html_document:
+    df_print: paged
 ---
 
 ```{r knitrSetup, include=FALSE}
 library(knitr)
-opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="center", fig.width=12, fig.height=12, tidy=TRUE)
+opts_chunk$set(out.extra='style="display:block; margin: auto"', fig.align="center", fig.width=5, fig.height=5, tidy=TRUE)
 ```
 
 # Purpose 
 This interactive notebook shows how to visualize a network built from partial correlation analysis of a perturbation proteomic (RPPA here) dataset using only R.
 
+# Installation 
+```{r install, eval=FALSE}
+options(repos=c(CRAN='https://mran.microsoft.com/snapshot/2020-04-01'))
+
+pkgs <- c('parcor', 'fdrtool', 'igraph')
+install.packages(pkgs)
+```
+
 # Load libraries
-```{r,message=FALSE,warning=FALSE}
+```{r load_libraries, message=FALSE, warning=FALSE}
 library(parcor)
 library(fdrtool)
 library(igraph)
 ``` 
 
 # Load proteomic data
-```{r}
+```{r load_data}
 nodes <- readRDS("melanoma_matrix_for_network_activitynodes.rds")
 # conditions in rows, proteins/nodes in columns
 nodes[1:5,1:5]
 ```
 
 # Load node labeling data
-```{r}
+```{r load_label_data}
 # nodes are protein nodes if labeled 1, phenotypic nodes if labeled 2, activity/drug coupling nodes if labeled 3
 nodeType <- read.table("node_index.txt",stringsAsFactors = FALSE,
                        col.names = c("name","type"),colClasses = c("character","numeric"))
@@ -60,7 +71,7 @@ https://arxiv.org/pdf/1607.01367.pdf
 
 
 # Run partial correlation analysis
-```{r}
+```{r run_parcor}
 # use the first 20 rows and 20 columns for a test run
 ridgenet_test <- ridge.net(nodes[1:20,1:20],
                       plot.it = FALSE, scale = TRUE, k = 10, verbose=FALSE)
@@ -76,7 +87,7 @@ ridgenet_actnode <- readRDS("ridgenet_nodes_results.RData")
 ```
 
 # Select for statistically significant edges
-```{r}
+```{r select_edges}
 # After the partial correlation calculation, fdrtool is used to assign statistical significance of the edges.Edges are called if pass the large-scale false discovery rate multiple testing (fdr < 0.2), otherwise the partial correlation goes to 0. Fewer edges will be called if a more stringent cutoff is used. 
 # Local FDR is used here (cutoff.method="locfdr")
 # More information see https://doi.org/10.1186/1471-2105-9-303 and https://doi.org/10.1198/016214504000000089
@@ -87,15 +98,15 @@ ridgenet_actnode[which(fdrTest$lfdr >= 0.2)] <- 0
 ```
 
 # Visualize network 
-```{r, fig.width=10, fig.height=10}
+```{r visual_network, fig.width=10, fig.height=10}
 # The adjacency matrix columns/rows follow this order: protein nodes, phenotypic nodes, drug coupling/activity nodes
 # the number of each type of nodes are given here
 
 # extract a three column edge table from correlation (adjacency) matrix (with top n interactions)
-# if n is not sepcified or is bigger than the number of all non-zero edges, use all non-zero edges
+# if n is not specified or is bigger than the number of all non-zero edges, use all non-zero edges
 # provide phenotypic nodes and activity nodes names
 source("extractEdge.R")
-ridge_edge <- extractEdge(ridgenet_actnode,n=150,phenoName=phenoNames,actName=actNames)
+ridge_edge <- extractEdge(ridgenet_actnode, n=150, phenoName=phenoNames, actName=actNames)
 
 # plot the network using igraph
 plotNetwork <- function(edge_list) {
@@ -107,28 +118,27 @@ plotNetwork <- function(edge_list) {
                 vertex.label.color="black",
                 vertex.size=7,
                 edge.width=1,
-                vertex.label.dist=0.9,
-                vertex.color=c("pink","skyblue","lightgreen")
-                [1+(V(g)$type!="drug")+(V(g)$type=="pheno")],
+                vertex.color=c("pink","skyblue","lightgreen")[1+(V(g)$type!="drug")+(V(g)$type=="pheno")],
                 edge.color=c("black","red")[1+(E(g)$type=="inhibit")],
                 layout = layout_with_lgl)
+  
   # igraph object plus plot theme
-  #params <- c(list(x=g), theme)
+  # params <- c(list(x=g), theme)
   return(list(g=g,theme=theme))
 }
+
 ridge_params <- plotNetwork(ridge_edge)
 params <- c(list(x=ridge_params$g), ridge_params$theme)
-do.call(plot,params)
-
+do.call(plot, params)
 ```
 
 # Analysis of Generated Networks
 
 ## Network Interactions and Edge Weights 
-```{r}
-library("DT")
-# interactive table
-DT::datatable(ridge_edge,rownames = FALSE)
+```{r list_interactions}
+#library(DT)
+#DT::datatable(ridge_edge, rownames = FALSE)
+ridge_edge
 ```
 
 ## known and unknown drug targets
@@ -144,10 +154,9 @@ SRC inhibitor targets phosophorylation of SRC protein. A new target identified i
 Phosphorylated retinoblastoma protein is directly connected to G1 arrest phenotype, which is expected given RB is known to inhibit cell cycle progression. 
 SRC and STAT3 contribute to G2 arrest. Both proteins are involved in signaling transductions that affect cell growth. However, it is likely that there are missing nodes in between SRC/STAT3 and G2 arrest phenotype that are not captured by this network.
 
-
 ## Paths From Drug to Phenotypes 
-shortest path method for this part
-```{r}
+Get shortest path method between nodes
+```{r shortest_paths}
 mTOR_G1 <- get.shortest.paths(ridge_params$g,"amTOR","G1arrest")$vpath[[1]]
 mTOR_G1
 ```

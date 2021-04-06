@@ -44,7 +44,7 @@ extractEdge <- function(input, n=NULL, phenoName, actName, fdrMat=NULL) {
     if(!is.null(fdrMat)) {
       edges_list[i,] <- c(colnames(input)[idx[1,2]], rownames(input)[idx[1,1]], input[idx[1,1],idx[1,2]], fdrMat[idx[1,1],idx[1,2]])
     } else {
-      edges_list[i,] <- c(colnames(input)[idx[1,2]], rownames(input)[idx[1,1]], input[idx[1,1],idx[1,2]])  
+      edges_list[i,] <- c(colnames(input)[idx[1,2]], rownames(input)[idx[1,1]], input[idx[1,1],idx[1,2]], NA)  
     }
   }
   
